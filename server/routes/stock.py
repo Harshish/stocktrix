@@ -38,4 +38,8 @@ def get_stock_sentiment(symbol: str):
             {"title": article.title, "link": article.link, "sentiment": sentiment}
         )
     average_sentiment = calculate_average_sentiment(sentiments)
-    return {"news": news_score, "average_sentiment": average_sentiment}
+    return {
+        "news": news_score,
+        "average_sentiment": average_sentiment,
+        "ticker": symbol,
+    }
