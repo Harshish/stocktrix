@@ -4,7 +4,7 @@ stock.py
 This module contains routes for stock related operations.
 """
 
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from ml.kernai_distilbert import classify_sentiment
 from ml.utils import calculate_average_sentiment, get_news_sentiments
 from sources.yfin import get_stock_history
@@ -29,6 +29,10 @@ def get_stock_sentiment(symbol: str):
     Get the current sentiment of a stock
     """
     articles = fetch_yahoo_finance_news(symbol)
+    if not articles:
+        raise HTTPException(
+            status_code=404, detail="Cannot find news articles for this stock ticker"
+        )
     sentiments = get_news_sentiments(
         [article.summary for article in articles], classify_sentiment
     )

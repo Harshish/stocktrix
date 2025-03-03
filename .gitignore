@@ -8,6 +8,7 @@ logs/**
 *.log
 venv
 .ipynb_checkpoints/
+**/test.ipynb
 
 # Operating System Files
 .DS_Store

@@ -6,12 +6,16 @@ import { useRouter } from "next/navigation";
 import { useAppContext } from "@/store/AppContext";
 import Loading from "./Loading";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export default function StockSearch() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [errorState, setError] = useState<{ error: boolean; message: string }>({
+    error: false,
+    message: "",
+  });
   const { setSentimentResponse } = useAppContext();
-  let isError = false;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -23,22 +27,23 @@ export default function StockSearch() {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/stock/sentiment/${stockTicker}`,
       );
-      if (!res.ok) {
-        throw new Error("Error in fetching data from server");
-      }
       const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data?.detail || "Error in fetching data from server");
+      }
       setSentimentResponse(data);
       router.push("/result");
     } catch (error) {
-      isError = true;
-      console.error(error);
+      setError({ error: true, message: (error as Error).message });
     } finally {
       setIsLoading(false);
     }
   }
 
-  if (isError) {
-    console.error("Error in fetching data from server --- TOAST");
+  if (errorState.error) {
+    toast("Uh oh! Something went wrong", {
+      description: errorState.message,
+    });
   }
 
   return (
