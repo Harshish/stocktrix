@@ -4,16 +4,16 @@ import { useTheme } from "next-themes";
 import { useEffect, useRef } from "react";
 
 export default function ThemeSwitch() {
-  const { setTheme, resolvedTheme } = useTheme();
+  const { setTheme, theme = "system" } = useTheme();
   const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (ref.current) ref.current.checked = resolvedTheme === "dark";
+    if (ref.current) ref.current.checked = theme === "dark";
   }, []);
 
   const handleToggle = () => {
     setTimeout(() => {
-      setTheme(resolvedTheme === "dark" ? "light" : "dark");
+      setTheme(theme === "dark" ? "light" : "dark");
     }, 500); // Delay for smooth transition
   };
 
