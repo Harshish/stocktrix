@@ -5,9 +5,6 @@ services:
       - 3000
     depends_on:
       - server
-    environment:
-      - NEXT_PUBLIC_SERVER_URL="https://api.stocktrix.com"
-      - NEXT_PUBLIC_APP_NAME="Stocktrix"
 
   server:
     build: ./server
