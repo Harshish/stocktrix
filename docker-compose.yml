@@ -1,15 +1,15 @@
 services:
   frontend:
     build: ./frontend
-    ports:
-      - "3000:3000"
+    expose:
+      - 3000
     depends_on:
       - server
     environment:
-      - NEXT_PUBLIC_SERVER_URL="http://server:9000"
+      - NEXT_PUBLIC_SERVER_URL="https://api.stocktrix.com"
       - NEXT_PUBLIC_APP_NAME="Stocktrix"
 
   server:
     build: ./server
-    ports:
-      - "9000:9000"
+    expose:
+      - 9000

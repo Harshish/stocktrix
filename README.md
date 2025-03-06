@@ -1,1 +1,1 @@
-# Finalyze
+# Stocktrix
