@@ -1,0 +1,71 @@
+services:
+  frontend:
+    build: ./frontend
+    depends_on:
+      - server
+    networks:
+      - coolify
+    environment:
+      - NEXT_PUBLIC_SERVER_URL="http://server:9000"
+      - NEXT_PUBLIC_APP_NAME="Stocktrix"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.frontend.entrypoints=https
+      - traefik.http.routers.frontend.rule=Host(`stocktrix.online`)
+      - traefik.http.services.frontend.loadbalancer.server.port=3000
+      - traefik.http.routers.frontend.tls=true
+      - traefik.http.routers.frontend.tls.certresolver=letsencrypt
+
+  server:
+    build: ./server
+    networks:
+      - coolify
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.server.entrypoints=https
+      - traefik.http.routers.server.rule=Host(`api.stocktrix.online`)
+      - traefik.http.services.server.loadbalancer.server.port=9000
+      - traefik.http.routers.server.tls=true
+      - traefik.http.routers.server.tls.certresolver=letsencrypt
+
+#   umami:
+#     image: ghcr.io/umami-software/umami:postgresql-latest
+#     ports:
+#       - "3001:3000"
+#     depends_on:
+#       - umami-db
+#     networks:
+#       - coolify
+#     environment:
+#       DATABASE_URL: postgresql://umami:password@umami-db:5432/umami
+#       APP_SECRET: "t+UeR1rXpUxUZVwrp+smMqpliuXp40mhwWfMOqVZ2uQ="
+#       COLLECT_API_ENDPOINT: /api/get
+#       TRACKER_SCRIPT_NAME: fetch.js
+#     restart: unless-stopped
+#     labels:
+#       - traefik.enable=true
+#       - traefik.http.routers.umami.entrypoints=https
+#       - traefik.http.routers.umami.rule=Host(`view.stocktrix.online`)
+#       - traefik.http.services.umami.loadbalancer.server.port=3001
+#       - traefik.http.routers.umami.tls=true
+#       - traefik.http.routers.umami.tls.certresolver=letsencrypt
+#       - traefik.http.routers.umami.middlewares="compress-gzip@file"
+#
+#   umami-db:
+#     image: postgres:15
+#     restart: unless-stopped
+#     networks:
+#       - coolify
+#     environment:
+#       POSTGRES_DB: umami
+#       POSTGRES_USER: umami
+#       POSTGRES_PASSWORD: password
+#     volumes:
+#       - umami-db-data:/var/lib/postgresql/data
+#
+# volumes:
+#   umami-db-data:
+
+networks:
+  coolify:
+    external: true
