@@ -88,10 +88,12 @@ pure_eval==0.2.3
 pycparser==2.22
 pydantic==2.10.6
 pydantic_core==2.27.2
-pyee>=12,<13
+pyee==12.1.1
 Pygments==2.19.1
+pyppeteer==0.0.25
 pyquery==2.0.1
 python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
 python-json-logger==3.2.1
 pytz==2025.1
 PyYAML==6.0.2

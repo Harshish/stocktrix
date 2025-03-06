@@ -1,29 +1,31 @@
 import { useState } from "react";
 
 export default function useApiGet(url: string) {
-  const [data, setData] = useState<JSON | null>(null);
+  const [data, setData] = useState<unknown>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isError, setIsError] = useState<boolean>(false);
+  const [errorState, setError] = useState<{ error: boolean; message: string }>({
+    error: false,
+    message: "",
+  });
 
-  async function fetchData(): Promise<JSON | null> {
+  async function fetchData() {
     setIsLoading(true);
+    let data = null;
     try {
       const res = await fetch(url);
+      data = await res.json();
       if (!res.ok) {
-        setIsError(true);
+        throw new Error(data?.detail || "Error in fetching data from server");
       }
-      return res.json();
+      setData(data);
     } catch (error) {
-      console.error(error);
-      return null;
+      setError({ error: true, message: (error as Error).message });
     } finally {
       setIsLoading(false);
     }
   }
 
-  fetchData().then((data) => {
-    setData(data);
-  });
+  fetchData();
 
-  return [data, isLoading, isError];
+  return [data, isLoading, errorState];
 }

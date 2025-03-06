@@ -21,6 +21,11 @@ export default function StockSearch() {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const stockTicker = formData.get("search") as string;
+    if (!stockTicker) {
+      setError({ error: true, message: "Please enter a stock ticker" });
+      return;
+    }
+    if (errorState.error) setError({ error: false, message: "" });
     setIsLoading(true);
 
     try {
