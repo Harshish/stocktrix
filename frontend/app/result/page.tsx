@@ -16,12 +16,12 @@ import NewsBar from "@/components/NewsBar";
 import AverageSentimentChart from "@/components/AverageSentimentChart";
 import { notFound } from "next/navigation";
 import BackButton from "@/components/BackButton";
+import Loading from "@/components/Loading";
 
 export default function Result() {
   const { sentimentResponse: data } = useAppContext();
   if (!data) {
-    console.log("No data found");
-    notFound();
+    return <Loading />;
   }
   return (
     <Card>

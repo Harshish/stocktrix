@@ -15,8 +15,7 @@ export default function StockSearch() {
     error: false,
     message: "",
   });
-  const [isContextSet, setIsContextSet] = useState<boolean>(false);
-  const { setSentimentResponse, sentimentResponse } = useAppContext();
+  const { setSentimentResponse } = useAppContext();
 
   const onSubmit = useCallback(
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -39,19 +38,14 @@ export default function StockSearch() {
           throw new Error(data?.detail || "Error in fetching data from server");
         }
         setSentimentResponse(data);
-        setIsContextSet(true);
+        router.push(`/result`);
       } catch (error) {
         setError({ error: true, message: (error as Error).message });
-      } finally {
         setIsLoading(false);
       }
     },
-    [errorState, isLoading, setSentimentResponse, isContextSet],
+    [errorState, isLoading, setSentimentResponse],
   );
-
-  useEffect(() => {
-    if (isContextSet && sentimentResponse) router.push(`/result`);
-  }, [isContextSet, sentimentResponse]);
 
   if (errorState.error) {
     toast("Uh oh! Something went wrong", {
