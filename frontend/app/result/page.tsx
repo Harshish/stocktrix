@@ -19,7 +19,10 @@ import BackButton from "@/components/BackButton";
 
 export default function Result() {
   const { sentimentResponse: data } = useAppContext();
-  if (!data) notFound();
+  if (!data) {
+    console.log("No data found");
+    notFound();
+  }
   return (
     <Card>
       <CardHeader>

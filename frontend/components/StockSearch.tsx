@@ -5,7 +5,7 @@ import FetchButton from "./FetchButton";
 import { useRouter } from "next/navigation";
 import { useAppContext } from "@/store/AppContext";
 import Loading from "./Loading";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { toast } from "sonner";
 
 export default function StockSearch() {
@@ -17,33 +17,36 @@ export default function StockSearch() {
   });
   const { setSentimentResponse } = useAppContext();
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
-    const stockTicker = formData.get("search") as string;
-    if (!stockTicker) {
-      setError({ error: true, message: "Please enter a stock ticker" });
-      return;
-    }
-    if (errorState.error) setError({ error: false, message: "" });
-    setIsLoading(true);
-
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/stock/sentiment/${stockTicker}`,
-      );
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data?.detail || "Error in fetching data from server");
+  const onSubmit = useCallback(
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+      e.preventDefault();
+      const formData = new FormData(e.target as HTMLFormElement);
+      const stockTicker = formData.get("search") as string;
+      if (!stockTicker) {
+        setError({ error: true, message: "Please enter a stock ticker" });
+        return;
       }
-      setSentimentResponse(data);
-      router.push("/result");
-    } catch (error) {
-      setError({ error: true, message: (error as Error).message });
-    } finally {
-      setIsLoading(false);
-    }
-  }
+      if (errorState.error) setError({ error: false, message: "" });
+      setIsLoading(true);
+
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/stock/sentiment/${stockTicker}`,
+        );
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data?.detail || "Error in fetching data from server");
+        }
+        setSentimentResponse(data);
+        router.push("/result");
+      } catch (error) {
+        setError({ error: true, message: (error as Error).message });
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [errorState, isLoading, router],
+  );
 
   if (errorState.error) {
     toast("Uh oh! Something went wrong", {
@@ -56,7 +59,7 @@ export default function StockSearch() {
       {!isLoading && (
         <form
           className="mx-2 flex items-center space-x-2 bg-white dark:bg-gray-800 p-4 rounded-full shadow-lg"
-          onSubmit={handleSubmit}
+          onSubmit={onSubmit}
         >
           <span className="flex items-center pl-2 rounded-full border-2 border-black dark:border-white focus-within:border-dotted">
             <Search />
