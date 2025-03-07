@@ -44,7 +44,7 @@ export default function StockSearch() {
         setIsLoading(false);
       }
     },
-    [errorState, isLoading, setSentimentResponse],
+    [errorState, isLoading, setSentimentResponse, router],
   );
 
   if (errorState.error) {
