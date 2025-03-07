@@ -2,12 +2,15 @@ services:
   frontend:
     build:
       context: ./frontend
+      args:
+        - SERVER_DOMAIN_NAME=${SERVER_DOMAIN_NAME}
+        - APP_NAME=${APP_NAME}
     expose:
       - 3000
     depends_on:
       - server
     env_file:
-      - .env
+      - ./frontend/.env.production
 
   server:
     build:
@@ -15,4 +18,4 @@ services:
     expose:
       - 9000
     env_file:
-      - .env
+      - ./server/.env.production
