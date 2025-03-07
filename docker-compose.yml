@@ -2,23 +2,17 @@ services:
   frontend:
     build:
       context: ./frontend
-      args:
-        - SERVER_DOMAIN_NAME=${SERVER_DOMAIN_NAME}
-        - APP_NAME=${APP_NAME}
     expose:
       - 3000
     depends_on:
       - server
-    environment:
-      - SERVER_DOMAIN_NAME=${SERVER_DOMAIN_NAME}
-      - APP_NAME=${APP_NAME}
+    env_file:
+      - .env
 
   server:
     build:
       context: ./server
-      args:
-        - APP_DOMAIN_NAME=${APP_DOMAIN_NAME}
     expose:
       - 9000
-    environment:
-      - APP_DOMAIN_NAME=${APP_DOMAIN_NAME}
+    env_file:
+      - .env
