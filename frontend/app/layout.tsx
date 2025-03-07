@@ -28,6 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          defer
+          src="https://umami.stocktrix.online/script.js"
+          data-website-id="410af495-0ff9-4c4a-bd88-7a6899ef4bce"
+        ></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
