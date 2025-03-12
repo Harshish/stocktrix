@@ -13,6 +13,7 @@ import NewsBar from "@/components/NewsBar";
 import AverageSentimentChart from "@/components/AverageSentimentChart";
 import BackButton from "@/components/BackButton";
 import { notFound } from "next/navigation";
+import ErrorPage from "@/components/ErrorPage";
 
 export default async function Result({
   params,
@@ -24,10 +25,29 @@ export default async function Result({
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_SERVER_URL}/stock/sentiment/${ticker}`,
+      {
+        method: "GET",
+        headers: {
+          "x-api-key": `${process.env.API_KEY}`,
+        },
+      },
     );
 
     if (!res.ok) {
       throw new Error(`Request failed with status ${res.status}`);
+    }
+
+    if (res.status === 404) {
+      return notFound();
+    }
+
+    if (res.status === 204) {
+      return (
+        <ErrorPage
+          error="No data! 😫"
+          message="Stock tickers of only NYSE and NASD are supported"
+        />
+      );
     }
 
     const data = await res.json();
@@ -37,7 +57,7 @@ export default async function Result({
           <CardTitle className="flex items-center space-x-2">
             <BackButton />
             <h1 className="text-2xl font-bold">
-              {data?.ticker} Stock Sentiment
+              {data?.ticker.toUpperCase()} Stock Sentiment
             </h1>
           </CardTitle>
           <CardDescription className="flex items-center space-x-1">
@@ -64,6 +84,11 @@ export default async function Result({
     );
   } catch (error) {
     console.error("Error fetching data:", error);
-    return notFound();
+    return (
+      <ErrorPage
+        error="Oops! 😵‍💫"
+        message="Something went wrong. Please try again later"
+      />
+    );
   }
 }

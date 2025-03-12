@@ -5,6 +5,8 @@ services:
       args:
         - SERVER_DOMAIN_NAME=${SERVER_DOMAIN_NAME}
         - APP_NAME=${APP_NAME}
+    environment:
+      - API_KEY=${API_KEY}
     expose:
       - 3000
     depends_on:
@@ -17,5 +19,7 @@ services:
       context: ./server
     expose:
       - 9000
+    environment:
+      - API_KEY=${API_KEY}
     env_file:
       - ./server/.env.production
