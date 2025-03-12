@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -21,7 +20,7 @@ export default function Footer() {
           target="_blank"
           className="flex justify-center items-center"
         >
-          <Image src="/bmac.svg" alt="Buy Me a Coffee" width={30} height={30} />
+          <img src="/bmac.svg" alt="Buy Me a Coffee" width={30} height={30} />
           <p className="underline">Buy Me a Coffee</p>
         </Link>
       </span>
