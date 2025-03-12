@@ -1,6 +1,7 @@
 export type News = {
   title: string;
   link: string;
+  published: string;
   sentiment: {
     negative: number;
     neutral: number;

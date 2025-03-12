@@ -44,7 +44,12 @@ def get_stock_sentiment(
     news_score = []
     for article, sentiment in zip(articles, sentiments):
         news_score.append(
-            {"title": article.title, "link": article.link, "sentiment": sentiment}
+            {
+                "title": article.title,
+                "link": article.link,
+                "sentiment": sentiment,
+                "published": article.published,
+            }
         )
     average_sentiment = calculate_average_sentiment(sentiments)
     return {

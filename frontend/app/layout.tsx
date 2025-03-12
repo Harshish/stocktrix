@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_APP_NAME,
   description: "Market analysis made simple",
+  icons: {
+    icon: "/bull.svg",
+  },
 };
 
 export default function RootLayout({
