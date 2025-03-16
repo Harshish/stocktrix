@@ -8,7 +8,7 @@ from auth import verify_api_key
 from fastapi import APIRouter, Depends, HTTPException
 from ml.kernai_distilbert import classify_sentiment
 from ml.utils import calculate_average_sentiment, get_news_sentiments
-from sources.yfin import get_stock_history
+from sources.yfin import get_matching_stock, get_stock_history
 from sources.yfin_rss import fetch_yahoo_finance_news
 
 router = APIRouter(prefix="/stock", tags=["Stock"])
@@ -57,3 +57,12 @@ def get_stock_sentiment(
         "average_sentiment": average_sentiment,
         "ticker": symbol,
     }
+
+
+@router.get("/search/{search_term}")
+def get_stock(search_term: str):
+    """
+    Get ticker of matching stock with company name or ticker
+    """
+    value = get_matching_stock(search_term)
+    return value.get("quotes", [])

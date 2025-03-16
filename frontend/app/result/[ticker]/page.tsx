@@ -44,8 +44,8 @@ export default async function Result({
     if (res.status === 204) {
       return (
         <ErrorPage
-          error="No data! 😫"
-          message="Stock tickers of only NYSE and NASD are supported"
+          error="No data! 😕"
+          message="Cannot find any news or sentiment data for this stock"
         />
       );
     }

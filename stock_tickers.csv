@@ -1,0 +1,199 @@
+Country,Ticker,Company Name
+US,AAPL,Apple Inc.
+US,AMZN,Amazon.com, Inc.
+US,GOOGL,Alphabet Inc. (Google)
+US,MSFT,Microsoft Corporation
+US,TSLA,Tesla, Inc.
+US,FB,Meta Platforms, Inc. (formerly Facebook)
+US,NVDA,NVIDIA Corporation
+US,BRK.B,Berkshire Hathaway Inc.
+US,DIS,The Walt Disney Company
+US,JNJ,Johnson & Johnson
+US,V,Visa Inc.
+US,MA,Mastercard Incorporated
+US,PG,Procter & Gamble Co.
+US,HD,Home Depot, Inc.
+US,INTC,Intel Corporation
+US,PYPL,PayPal Holdings, Inc.
+US,CSCO,Cisco Systems, Inc.
+US,NFLX,Netflix, Inc.
+US,BABA,Alibaba Group
+US,PEP,PepsiCo, Inc.
+US,VZ,Verizon Communications Inc.
+US,T,AT&T Inc.
+US,IBM,International Business Machines Corporation
+US,MRK,Merck & Co., Inc.
+US,XOM,ExxonMobil Corporation
+US,CVX,Chevron Corporation
+US,KO,The Coca-Cola Company
+US,ABT,Abbott Laboratories
+US,AMAT,Applied Materials, Inc.
+US,WMT,Walmart Inc.
+US,MCD,McDonald’s Corporation
+US,GS,Goldman Sachs Group, Inc.
+US,UNH,UnitedHealth Group Incorporated
+US,AXP,American Express Company
+US,GM,General Motors Company
+US,LOW,Lowe’s Companies, Inc.
+US,CAT,Caterpillar Inc.
+US,UPS,United Parcel Service, Inc.
+US,SPG,Simon Property Group, Inc.
+US,RTX,Raytheon Technologies Corporation
+US,BA,The Boeing Company
+US,AMD,Advanced Micro Devices, Inc.
+US,LMT,Lockheed Martin Corporation
+US,GS,Goldman Sachs Group, Inc.
+US,WFC,Wells Fargo & Company
+US,TRV,The Travelers Companies, Inc.
+US,NKE,Nike, Inc.
+US,COST,Costco Wholesale Corporation
+US,SBUX,Starbucks Corporation
+US,TGT,Target Corporation
+UK,BP,BP PLC
+UK,HSBC,HSBC Holdings PLC
+UK,RDS.A,Royal Dutch Shell (Class A)
+UK,GSK,GlaxoSmithKline
+UK,VOD,Vodafone Group Plc
+UK,DGE,Diageo PLC
+UK,AZN,AstraZeneca PLC
+UK,LLOY,Lloyds Banking Group Plc
+UK,BARC,Barclays PLC
+UK,RKT,The Royal Bank of Scotland Group
+UK,TSCO,Tesco PLC
+UK,IMB,Imperial Brands PLC
+UK,SMIN,Smith & Nephew PLC
+UK,MKS,Marks and Spencer Group PLC
+UK,SHEL,Shell PLC
+UK,NG,National Grid PLC
+UK,BT.A,BT Group plc
+UK,BHP,BHP Group
+UK,NXT,Next Plc
+UK,ITV,ITV PLC
+UK,PSON,Pearson PLC
+UK,REL,Reckitt Benckiser Group PLC
+UK,CPG,Centrica PLC
+UK,FRES,Fresnillo PLC
+UK,MNDI,Mondi PLC
+UK,LGEN,Legal & General Group Plc
+UK,SSE,SSE Plc
+UK,SPX,Spirax-Sarco Engineering PLC
+UK,CRH,CRH PLC
+UK,IMI,IMI Plc
+UK,WMH,William Hill PLC
+UK,BDEV,Barratt Developments Plc
+UK,SGE,SEGRO PLC
+UK,SMT,Scottish Mortgage Investment Trust
+UK,RDSB,Royal Dutch Shell (Class B)
+UK,HL,Hargreaves Lansdown Plc
+UK,MNDI,Mondi Group
+UK,JD,JD Sports Fashion PLC
+UK,ITRK,Intertek Group Plc
+UK,PFG,Provident Financial Plc
+UK,STAN,Standard Chartered PLC
+UK,AAL,Anglo American PLC
+UK,IMI,IMI PLC
+UK,DCC,DCC PLC
+UK,MNG,M&G Plc
+UK,LID,London International Group Plc
+UK,GSK,GlaxoSmithKline
+UK,BHP,BHP Group
+UK,VOD,Vodafone Group PLC
+UK,CPI,Capita Plc
+Europe,BMW,Bayerische Motoren Werke AG
+Europe,SAP,SAP SE
+Europe,DTE,Deutsche Telekom AG
+Europe,ADS,Adidas AG
+Europe,BAS,BASF SE
+Europe,MUV2.DE,Munich Re
+Europe,CON,Continental AG
+Europe,SIE,Siemens AG
+Europe,RWE,RWE AG
+Europe,DBK,Deutsche Bank AG
+Europe,LHA,Lufthansa Group
+Europe,ZAL,Zalando SE
+Europe,FRE,Fresenius SE & Co. KGaA
+Europe,VOW3.DE,Volkswagen AG
+Europe,ALV,Allianz SE
+Europe,Daimler,Daimler AG
+Europe,HEX,Henkel AG & Co. KGaA
+Europe,LXS,Linde PLC
+Europe,BEI,Beiersdorf AG
+Europe,FME,FMC Corporation
+Europe,TKA,ThyssenKrupp AG
+Europe,RIB,RIB Software AG
+Europe,TLG,TLG Immobilien AG
+Europe,MTX,Metro AG
+Europe,FRT,Fränkische Rohrwerke Gebr. Kirchner GmbH
+Europe,BAYN,Bayer AG
+Europe,HEN3.DE,Henkel AG
+Europe,EOAN,E.ON SE
+Europe,PUM,Puma SE
+Europe,SAP,SAP SE
+Europe,COV,Covestro AG
+Europe,SHL,SGL Carbon
+Europe,VOW,Volkswagen AG
+Europe,FTSE,FTSE Group
+Europe,ALV,Allianz SE
+Europe,MU2.DE,Munich Re
+Europe,LHO,Lhoist Group
+Europe,DGE,Diageo Plc
+Europe,RWE,RWE AG
+Europe,EXO,Exxaro Resources
+Europe,ZF,ZF Friedrichshafen AG
+Europe,BNR,Brenntag AG
+Europe,MTX,Metro AG
+Europe,PUM,PUMA AG
+Europe,TKA,ThyssenKrupp AG
+Europe,ENC,Encavis AG
+India,TCS,Tata Consultancy Services
+India,RELIANCE,Reliance Industries Limited
+India,INFY,Infosys Limited
+India,HDFC,HDFC Bank Limited
+India,ITC,ITC Limited
+India,KOTAKBANK,Kotak Mahindra Bank Ltd
+India,SBIN,State Bank of India
+India,BHARTIARTL,Bharti Airtel Ltd
+India,HCLTECH,HCL Technologies Limited
+India,AXISBANK,Axis Bank Ltd
+India,LT,Larsen & Toubro Ltd
+India,MARUTI,Maruti Suzuki India Ltd
+India,BAJAJFINSV,Bajaj Finserv Ltd
+India,RELIANCECAP,Reliance Capital Ltd
+India,ADANIGREEN,Adani Green Energy Ltd
+India,BAJAJ-AUTO,Bajaj Auto Ltd
+India,ULTRACEMCO,UltraTech Cement Ltd
+India,GRASIM,Grasim Industries Ltd
+India,DRREDDY,Dr. Reddy's Laboratories Ltd
+India,ONGC,Oil and Natural Gas Corporation
+India,M&M,Mahindra & Mahindra Ltd
+India,SUNPHARMA,Sun Pharmaceutical Industries Ltd
+India,ASIANPAINT,Asian Paints Ltd
+India,TECHM,Tech Mahindra Ltd
+India,CIPLA,Cipla Ltd
+India,SHREECEM,Shree Cement Ltd
+India,HINDUNILVR,Hindustan Unilever Limited
+India,TITAN,Titan Company Ltd
+India,NTPC,NTPC Ltd
+India,IOCL,Indian Oil Corporation Ltd
+India,POWERGRID,Power Grid Corporation of India Ltd
+India,RECLTD,REC Limited
+India,INFRATEL,Indus Towers Ltd
+India,ICICIBANK,ICICI Bank Ltd
+India,BAJAJFINANCE,Bajaj Finance Ltd
+India,IDFCFIRSTB,IDFC First Bank Ltd
+India,INDUSINDBK,IndusInd Bank Ltd
+India,UPL,UPL Ltd
+India,DMART, Avenue Supermarts Ltd
+India,IOC,Indian Oil Corporation
+India,INFRATEL,Indus Towers Ltd
+India,ASIANPAINT,Asian Paints
+India,NESTLEIND,Nestle India Ltd
+India,ABFRL,Aditya Birla Fashion & Retail Ltd
+India,SEQUENT,Sequent Scientific Ltd
+India,APOLLOHOSP,APOLLO Hospitals Enterprise Ltd
+India,ITC,ITC Ltd
+India,SPICEJET,SpiceJet Ltd
+India,BAJAJHLDNG,Bajaj Holdings & Investment Ltd
+India,UPL,UPL Ltd
+India,PHILIPCARB,Phillips Carbon Black Ltd
+India,DMART,Avenue Supermarts Ltd

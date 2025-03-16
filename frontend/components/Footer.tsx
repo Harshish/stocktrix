@@ -15,14 +15,14 @@ export default function Footer() {
         </Link>
       </span>
       <span className="text-sm text-muted-foreground">
-        <Link
-          href="https://buymeacoffee.com/harsis"
-          target="_blank"
-          className="flex justify-center items-center"
-        >
-          <img src="/bmac.svg" alt="Buy Me a Coffee" width={30} height={30} />
-          <p className="underline">Buy Me a Coffee</p>
-        </Link>
+        <a href="https://www.buymeacoffee.com/harsis" target="_blank">
+          <img
+            src="/bmc-button.svg"
+            alt="Buy Me A Coffee"
+            height={25}
+            width={150}
+          />
+        </a>
       </span>
     </footer>
   );
