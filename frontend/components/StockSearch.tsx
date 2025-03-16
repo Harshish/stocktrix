@@ -19,7 +19,7 @@ export default function StockSearch() {
   const router = useRouter();
   const [query, setQuery] = useState<string>("");
   const [debouncedQuery, setDebouncedQuery] = useState<string>("");
-  const [data, setData] = useState<Array<any>>([]);
+  const [data, setData] = useState<Array<unknown>>([]);
   const flag = useRef<boolean>(false);
 
   useEffect(() => {
@@ -90,7 +90,7 @@ export default function StockSearch() {
           <CommandList className="mx-2 rounded-lg bg-white dark:bg-gray-900 absolute mt-16">
             {data.length > 0 && (
               <CommandGroup heading="Suggestions">
-                {data.map((stock: any) => (
+                {data.map((stock: unknown) => (
                   <CommandItem
                     key={stock.symbol}
                     value={stock.symbol}
