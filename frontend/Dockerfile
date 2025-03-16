@@ -2,7 +2,7 @@
 FROM node:18-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --legacy-peer-deps
 
 # Pass build arguments (must be repeated for each stage where they are needed)
 ARG SERVER_DOMAIN_NAME
