@@ -7,13 +7,6 @@ import { toast } from "sonner";
 import { useEffect, useRef, useState } from "react";
 import { Search } from "lucide-react";
 
-import {
-  Command,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
 import SuggestionBar from "./SuggestionBar";
 
 export default function StockSearch() {
