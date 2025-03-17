@@ -52,7 +52,7 @@ export default async function Result({
 
     const data = await res.json();
     return (
-      <Card>
+      <Card className="mx-2">
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
             <BackButton />
