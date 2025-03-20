@@ -18,9 +18,21 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_APP_NAME,
-  description: "Market analysis made simple",
+  description: "Analyze stock market sentiment using AI and real-time data.",
   icons: {
     icon: "/bull.svg",
+  },
+  keywords: ["stock analysis", "AI trading", "financial news", "market trends"],
+  openGraph: {
+    title: "Stock Sentiment Analysis | AI Insights",
+    description: "AI-powered sentiment analysis for smarter investing.",
+    url: "https://stocktrix.online",
+    images: [
+      {
+        url: "https://stocktrix.online/bull.svg",
+      },
+    ],
+    type: "website",
   },
 };
 
