@@ -9,6 +9,7 @@ logs/**
 venv
 .ipynb_checkpoints/
 **/test.ipynb
+graphify-out/
 
 # Operating System Files
 .DS_Store
